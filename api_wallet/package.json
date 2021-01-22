@@ -1,0 +1,10 @@
+{
+  "name": "api_wallet",
+  "version": "1.0.0",
+  "description": "API to managment incomes and outcomes",  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabian Ramirez",
+  "license": "ISC"
+}
