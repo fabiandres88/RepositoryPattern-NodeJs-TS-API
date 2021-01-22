@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "API to managment incomes and outcomes",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/* --fix"
   },
   "author": "Fabian Ramirez",
   "license": "ISC",
@@ -11,6 +12,9 @@
     "typescript": "^4.1.3"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
     "ts-node-dev": "^1.1.1"
   }
 }
