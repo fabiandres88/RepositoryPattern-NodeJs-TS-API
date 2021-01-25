@@ -2,18 +2,24 @@
     "type": "mysql",
     "host": "localhost",
     "port": 8111,
-    "username": "test",
-    "password": "test",
+    "username": "root",
+    
     "database": "api_wallet",
     "synchronize": true,
-    "logging": false,
     "entities": [
-       "src/entity/**/*.ts"
-    ],
+      "src/entity/**/*.ts"
+   ],
+    "logging": false,
+    "migrationTableName":"custom_migration_table",    
     "migrations": [
        "src/migration/**/*.ts"
     ],
     "subscribers": [
        "src/subscriber/**/*.ts"
-    ]
+    ],
+    "cli": {
+       "entitiesDir": "src/entity",
+       "migrationsDir": "src/migration",
+       "subscriberDir": "src/subscriber"
+    }
  }
