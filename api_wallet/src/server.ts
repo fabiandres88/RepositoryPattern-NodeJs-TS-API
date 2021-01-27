@@ -1,5 +1,5 @@
-import { app } from './app';
 import "reflect-metadata";
+import { app } from './app';
 import { createConnection } from 'typeorm';
 
 //database connection

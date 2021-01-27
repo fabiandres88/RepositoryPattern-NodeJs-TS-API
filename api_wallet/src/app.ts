@@ -8,8 +8,22 @@ dotenv.config({
 });
 
 import express = require('express');
-
-const app: express.Application = express();
-app.use(express.json());
+import morgan from 'morgan';
+import { createExpressServer } from 'routing-controllers';
+import { resolve } from 'path';
+import  bodyParser = require ('body-parser');
+    
+const app: express.Application = createExpressServer({
+    defaultErrorHandler: false,
+    classTransformer: true,
+    validation: {
+        validationError: {
+            target: false
+        }
+    },
+    controllers: [resolve(__dirname, "./controllers/**/*{.ts,.js}")]
+});
+app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 export { app };
