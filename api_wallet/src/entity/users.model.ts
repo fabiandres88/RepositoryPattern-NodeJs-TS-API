@@ -1,32 +1,32 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from 'typeorm';
 import { Balances } from './balances.model';
 import { Movements } from './movements.model';
-import { Subscriptions } from './subscription';
+import { Subscriptions } from './subscriptions.model';
 
 @Entity("users", { schema: "public"})
 export class Users {
 
     @PrimaryGeneratedColumn("uuid")
-    id!: string;
+    id: string;
 
     @Column("varchar", { name: "email", default: () => "''" })
-    email!: string;
+    email: string;
 
     @Column("varchar", { name: "password", default: () => "''"})
-    password!: string;
+    password: string;
 
     @CreateDateColumn()
-    createdAt!: Date;
+    createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt!: Date;
+    updatedAt: Date;
 
     @OneToMany(type => Movements, movements => movements.user_id)
-    movements!: Movements[];
+    movements: Movements[];
 
     @OneToMany(type => Subscriptions, subscriptions => subscriptions.user_id)
-    subscriptions!: Subscriptions[];
+    subscriptions: Subscriptions[];
 
     @OneToMany(type => Balances, balances => balances.user_id)
-    balances!: Balances[];
+    balances: Balances[];
 }

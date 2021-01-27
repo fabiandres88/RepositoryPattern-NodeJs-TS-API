@@ -4,20 +4,20 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateCol
 export class Movements {
 
     @PrimaryGeneratedColumn("uuid")
-    id!: string;
+    id: string;
 
     @Column()
-    user_id!: number;
+    user_id: number;
 
     @Column()
-    type!: boolean;
+    type: boolean;
 
     @Column()
-    amount!: number;
+    amount: number;
 
     @CreateDateColumn()
-    createdAt!: Date;
+    createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt!: Date;
+    updatedAt: Date;
 }
